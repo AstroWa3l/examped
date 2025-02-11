@@ -1,0 +1,68 @@
+/* Light Mode Colors */
+:root {
+    --primary: #3674B5;    /* Primary button/background accent */
+    --secondary: #578FCA;  /* Hover or secondary accent */
+    --accent: #A1E3F9;     /* Selected answer highlight */
+    --bg: #D1F8EF;         /* Body background */
+    --container-bg: #ffffff; /* Container background */
+    --text: #222831;       /* Primary text color */
+}
+
+/* Global Styles for Light Mode */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+}
+
+/* Centered container */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: var(--container-bg);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--text);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: var(--secondary);
+}
+
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Selected answer */
+.selected {
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+/* Dark Mode Overrides using a class on the body */
+body.dark {
+    --primary: #222831;      /* Primary dark mode button/background */
+    --secondary: #31363F;    /* Dark mode hover */
+    --accent: #76ABAE;       /* Dark mode selected answer */
+    --bg: #222831;           /* Dark mode body background */
+    --container-bg: #31363F;  /* Dark mode container background */
+    --text: #EEEEEE;         /* Light text for dark mode */
+}

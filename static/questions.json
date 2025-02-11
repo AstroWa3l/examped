@@ -1,0 +1,312 @@
+[
+    {
+      "question": "Which of the following is NOT a currently supported version of Windows?",
+      "options": [
+        "Windows 10",
+        "Windows 8.1",
+        "Windows 11",
+        "Windows 7"
+      ],
+      "answer": "Windows 7"
+    },
+    {
+      "question": "What is the primary benefit of using Linux as an operating system?",
+      "options": [
+        "It is open-source and highly customizable",
+        "It has a built-in Office Suite",
+        "It only runs on specific hardware",
+        "It does not require updates"
+      ],
+      "answer": "It is open-source and highly customizable"
+    },
+    {
+      "question": "What is the purpose of hashing in cybersecurity?",
+      "options": [
+        "Encrypting data for transmission",
+        "Creating a unique digital fingerprint for data",
+        "Compressing files to save space",
+        "Hiding files within other files"
+      ],
+      "answer": "Creating a unique digital fingerprint for data"
+    },
+    {
+      "question": "Which of the following is an example of a zero-day attack?",
+      "options": [
+        "An attack that exploits an unpatched vulnerability before the vendor releases a fix",
+        "An attack that floods a network with excessive traffic",
+        "A phishing attempt using deceptive emails",
+        "A brute force attack on a password"
+      ],
+      "answer": "An attack that exploits an unpatched vulnerability before the vendor releases a fix"
+    },
+    {
+      "question": "If a Windows system fails to boot properly, which tool can be used to troubleshoot the issue?",
+      "options": [
+        "Task Manager",
+        "Event Viewer",
+        "Recovery Environment (WinRE)",
+        "Disk Cleanup"
+      ],
+      "answer": "Recovery Environment (WinRE)"
+    },
+    {
+      "question": "What is the first step in the malware removal process?",
+      "options": [
+        "Run antivirus scans",
+        "Disable system restore",
+        "Quarantine the infected system",
+        "Educate the end user"
+      ],
+      "answer": "Quarantine the infected system"
+    },
+    {
+      "question": "What is a primary risk of sideloading apps on an Android device?",
+      "options": [
+        "The app may not function properly",
+        "The app could contain malware",
+        "The app will always require an internet connection",
+        "The app is not compatible with VPNs"
+      ],
+      "answer": "The app could contain malware"
+    },
+    {
+      "question": "What is the most effective way to secure a mobile device?",
+      "options": [
+        "Using a 4-digit PIN",
+        "Installing a screen protector",
+        "Enabling biometric authentication and multifactor authentication",
+        "Turning off Bluetooth"
+      ],
+      "answer": "Enabling biometric authentication and multifactor authentication"
+    },
+    {
+      "question": "What is a man-in-the-middle attack?",
+      "options": [
+        "An attacker inserting themselves into a communication between two parties",
+        "A brute force attack against login credentials",
+        "A denial-of-service attack targeting a server",
+        "A social engineering attack via email"
+      ],
+      "answer": "An attacker inserting themselves into a communication between two parties"
+    },
+    {
+      "question": "What protocol is commonly used for secure remote access?",
+      "options": [
+        "FTP",
+        "Telnet",
+        "SSH",
+        "HTTP"
+      ],
+      "answer": "SSH"
+    },
+    {
+      "question": "Which of the following Windows editions is designed for business environments?",
+      "options": [
+        "Windows Home",
+        "Windows Pro",
+        "Windows 10 S",
+        "Windows Starter"
+      ],
+      "answer": "Windows Pro"
+    },
+    {
+      "question": "What is the primary function of the Windows Task Scheduler?",
+      "options": [
+        "Manage running processes",
+        "Automate tasks at scheduled times",
+        "Monitor hardware usage",
+        "Delete temporary files"
+      ],
+      "answer": "Automate tasks at scheduled times"
+    },
+    {
+      "question": "What file system is primarily used by macOS?",
+      "options": [
+        "NTFS",
+        "ext4",
+        "APFS",
+        "FAT32"
+      ],
+      "answer": "APFS"
+    },
+    {
+      "question": "What tool allows users to manage software installations in Linux?",
+      "options": [
+        "Control Panel",
+        "apt-get",
+        "Registry Editor",
+        "Device Manager"
+      ],
+      "answer": "apt-get"
+    },
+    {
+      "question": "Which Linux command is used to move files?",
+      "options": [
+        "mv",
+        "cp",
+        "rm",
+        "pwd"
+      ],
+      "answer": "mv"
+    },
+    {
+      "question": "What Windows feature allows encryption of an entire drive?",
+      "options": [
+        "File Explorer",
+        "BitLocker",
+        "Windows Defender",
+        "Disk Management"
+      ],
+      "answer": "BitLocker"
+    },
+    {
+      "question": "Which type of OS update installation allows users to keep personal files and settings?",
+      "options": [
+        "Clean install",
+        "In-place upgrade",
+        "Remote install",
+        "Network deployment"
+      ],
+      "answer": "In-place upgrade"
+    },
+    {
+      "question": "Which Windows feature allows users to revert to a previous system state?",
+      "options": [
+        "Task Manager",
+        "System Restore",
+        "Event Viewer",
+        "Disk Cleanup"
+      ],
+      "answer": "System Restore"
+    },
+    {
+      "question": "What is the purpose of Windows Recovery Environment (WinRE)?",
+      "options": [
+        "Restore user files",
+        "Boot into a diagnostic mode for troubleshooting",
+        "Reset forgotten passwords",
+        "Improve system performance"
+      ],
+      "answer": "Boot into a diagnostic mode for troubleshooting"
+    },
+    {
+      "question": "What macOS feature allows users to create automatic backups?",
+      "options": [
+        "Finder",
+        "Mission Control",
+        "Time Machine",
+        "Spotlight"
+      ],
+      "answer": "Time Machine"
+    },
+    {
+      "question": "What security measure prevents unauthorized access to a workstation?",
+      "options": [
+        "Enabling automatic login",
+        "Using a complex password",
+        "Turning off User Account Control",
+        "Disabling the firewall"
+      ],
+      "answer": "Using a complex password"
+    },
+    {
+      "question": "What is the function of a firewall?",
+      "options": [
+        "Encrypt stored data",
+        "Block unauthorized network traffic",
+        "Scan for malware",
+        "Manage file permissions"
+      ],
+      "answer": "Block unauthorized network traffic"
+    },
+    {
+      "question": "What is social engineering?",
+      "options": [
+        "A type of malware",
+        "An attack that exploits human psychology",
+        "A way to speed up network performance",
+        "A type of encryption"
+      ],
+      "answer": "An attack that exploits human psychology"
+    },
+    {
+      "question": "Which attack tricks users into entering credentials on a fake website?",
+      "options": [
+        "Phishing",
+        "DDoS",
+        "Man-in-the-middle",
+        "Brute-force"
+      ],
+      "answer": "Phishing"
+    },
+    {
+      "question": "What is a zero-day attack?",
+      "options": [
+        "An exploit used before a patch is released",
+        "A brute-force password attack",
+        "An attack on IoT devices",
+        "A firewall bypass technique"
+      ],
+      "answer": "An exploit used before a patch is released"
+    },
+    {
+      "question": "What tool should be used to encrypt email messages?",
+      "options": [
+        "VPN",
+        "BitLocker",
+        "PGP",
+        "Firewall"
+      ],
+      "answer": "PGP"
+    },
+    {
+      "question": "What type of attack uses multiple infected computers to overwhelm a network?",
+      "options": [
+        "Phishing",
+        "DDoS",
+        "SQL Injection",
+        "Ransomware"
+      ],
+      "answer": "DDoS"
+    },
+    {
+      "question": "What type of malware locks a user’s files and demands payment for decryption?",
+      "options": [
+        "Adware",
+        "Spyware",
+        "Ransomware",
+        "Rootkit"
+      ],
+      "answer": "Ransomware"
+    },
+    {
+      "question": "What tool is used to analyze system errors in Windows?",
+      "options": [
+        "Task Scheduler",
+        "Event Viewer",
+        "Device Manager",
+        "File Explorer"
+      ],
+      "answer": "Event Viewer"
+    },
+    {
+      "question": "What Windows tool is used to roll back drivers?",
+      "options": [
+        "Device Manager",
+        "Control Panel",
+        "Disk Cleanup",
+        "Group Policy Editor"
+      ],
+      "answer": "Device Manager"
+    },
+    {
+      "question": "Which cloud computing model provides a virtual environment where users can deploy applications?",
+      "options": [
+        "IaaS",
+        "PaaS",
+        "SaaS",
+        "On-premise"
+      ],
+      "answer": "PaaS"
+    }
+  ]
