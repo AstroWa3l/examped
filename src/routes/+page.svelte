@@ -1,27 +1,40 @@
-<script>
+<script lang="ts">
   import { onMount, onDestroy } from "svelte";
 
   /** @type {{ question: string, options: string[], answer: string }[]} */
-  let questions = [];
+  let questions: { question: string, options: string[], answer: string }[] = [];
   let currentQuestionIndex = 0;
   /** @type {string | null} */
-  let selectedAnswer = null;
+  let selectedAnswer: string | null = null;
   let isLoading = true;
   let score = 0;
   let hasSubmitted = false;
   let examFinished = false;
   let timeLeft = 3600; // one hour in seconds
   /** @type {number | undefined} */
-  let timerId;
+  let timerId: number | undefined;
 
   // Reactive declaration to format timeLeft in mm:ss
   $: formattedTime = `${Math.floor(timeLeft / 60)}:${(timeLeft % 60)
     .toString()
     .padStart(2, "0")}`;
 
+  // Reactive declaration to show current question number
+  $: questionNumber = `Question ${currentQuestionIndex + 1} / ${questions.length}`;
+
+  // Function to shuffle an array
+  function shuffle<T>(array: T[]): T[] {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
   async function fetchQuestions() {
     const res = await fetch("/questions.json");
-    questions = await res.json();
+    const data: { question: string, options: string[], answer: string }[] = await res.json();
+    questions = shuffle(data);
     isLoading = false;
     // Set timer for the entire exam once questions are loaded
     timeLeft = 3600;
@@ -71,6 +84,16 @@
     }, 1000);
   }
 
+  function resetQuiz() {
+    currentQuestionIndex = 0;
+    selectedAnswer = null;
+    score = 0;
+    hasSubmitted = false;
+    examFinished = false;
+    timeLeft = 3600;
+    fetchQuestions();
+  }
+
   // Toggle dark mode by toggling a class on the body
   function toggleDarkMode() {
     document.body.classList.toggle("dark");
@@ -94,8 +117,16 @@
 
 <main class="container">
   <header class="header">
+    <!-- Reset button on the upper left -->
+    <button class="reset-btn" on:click={resetQuiz} aria-label="Reset quiz">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2V6C7.58 6 4 9.58 4 14C4 18.42 7.58 22 12 22C16.42 22 20 18.42 20 14H18C18 17.31 15.31 20 12 20C8.69 20 6 17.31 6 14C6 10.69 8.69 8 12 8V12L17 7L12 2Z" />
+      </svg>
+    </button>
     <!-- Centered time text -->
     <p class="time">Time left: {formattedTime}</p>
+    <!-- Current question number -->
+    <p class="question-number">{questionNumber}</p>
     <!-- Dark mode toggle on the upper right -->
     <button class="toggle-btn" on:click={toggleDarkMode} aria-label="Toggle dark mode">
       <svg viewBox="0 0 24 24">
@@ -124,6 +155,11 @@
       {#if examFinished}
         <p>Final score: {score}</p>
       {/if}
+
+      <!-- Reset button to start over -->
+      <button on:click={resetQuiz}>
+        Reset
+      </button>
     {:else}
       <p>No questions available.</p>
     {/if}
@@ -150,12 +186,37 @@
     width: 100%;
     text-align: center;
     margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .reset-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    border: none;
+    padding: 4px;
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+  }
+
+  .reset-btn svg {
+    width: 100%;
+    height: auto;
+    fill: var(--text);
   }
 
   .time {
     font-size: 1.25rem;
     color: var(--text);
     margin: 0; /* Remove extra margins */
+  }
+
+  .question-number {
+    font-size: 1.25rem;
+    color: var(--text);
+    margin: 0.5rem 0;
   }
 
   .toggle-btn {
@@ -191,6 +252,7 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-top: 10px;
   }
 
   button:hover:not(:disabled) {
