@@ -22,6 +22,9 @@
   // Reactive declaration to show current question number
   $: questionNumber = `Question ${currentQuestionIndex + 1} / ${questions.length}`;
 
+  // Reactive declaration to calculate and format the final score in percentage
+  $: finalScorePercentage = examFinished ? `${((score / questions.length) * 100).toFixed(2)}%` : '';
+
   // Function to shuffle an array
   function shuffle<T>(array: T[]): T[] {
     for (let i = array.length - 1; i > 0; i--) {
@@ -54,10 +57,18 @@
         score += 1;
       }
     }
-    // Automatically go to next question after a short delay
-    setTimeout(() => {
-      nextQuestion();
-    }, 500);
+
+    if (currentQuestionIndex < questions.length - 1) {
+      // Automatically go to next question after a short delay
+      setTimeout(() => {
+        nextQuestion();
+      }, 500);
+    } else {
+      // Final question submitted, calculate and display score
+      console.log("Quiz finished. Final score:", score);
+      examFinished = true;
+      clearInterval(timerId);
+    }
   }
 
   function nextQuestion() {
@@ -148,18 +159,13 @@
       {/each}
 
       <!-- Submission button disabled if already submitted for this question -->
-      <button on:click={() => submitAnswer()} disabled={hasSubmitted}>
+      <button class="submit-btn" on:click={() => submitAnswer()} disabled={hasSubmitted}>
         Submit
       </button>
 
       {#if examFinished}
-        <p>Final score: {score}</p>
+        <p>Final score: {finalScorePercentage}</p>
       {/if}
-
-      <!-- Reset button to start over -->
-      <button on:click={resetQuiz}>
-        Reset
-      </button>
     {:else}
       <p>No questions available.</p>
     {/if}
@@ -268,6 +274,15 @@
     background-color: var(--accent);
     color: var(--text);
     border: 2px solid transparent;
+  }
+
+  .submit-btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+
+  .submit-btn:hover:not(:disabled) {
+    background-color: #45a049;
   }
 
   @media (max-width: 600px) {
